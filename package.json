@@ -1,12 +1,9 @@
 {
-  "name": "blueshift",
+  "name": "cookie-popup",
   "version": "1.0.0",
-  "description": "blueShift sources",
+  "description": "cookie-popup",
   "scripts": {
-    "start": "gulp",
-    "start:hugo": "hugo server",
-    "proxy": "npx netlify-cms-proxy-server",
-    "copyStatic": "gulp copyStatic"
+    "start": "gulp"
   },
   "author": ".mdl aka Artyom Bogomolov",
   "license": "ISC",
@@ -20,37 +17,22 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-beml": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-imagemin": "^7.1.0",
     "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-pug": "^4.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^13.0.0",
-    "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-webp": "^4.0.1",
-    "gulp-webp-html": "^1.0.2",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "lodash.template": "^4.5.0",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.14.0",
     "prettier": "^2.0.5",
-    "proxy-polyfill": "^0.3.1",
     "stylelint": "^13.6.1",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "webpack": "^5.30.0",
     "webpack-stream": "^6.1.2"
   },
-  "dependencies": {
-    "lg-zoom.js": "^1.3.0",
-    "lightgallery.js": "^1.4.0",
-    "swiper": "^6.5.3",
-    "vanilla-lazyload": "^17.3.1"
-  }
+  "dependencies": {}
 }
