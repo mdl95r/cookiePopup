@@ -43,7 +43,6 @@ const { src, dest } = require('gulp'),
   gulpStylelint = require('gulp-stylelint'),
   cleanCss = require('gulp-clean-css'),
   renameCss = require('gulp-rename'),
-  mergeStream = require('merge-stream'),
   webpack = require('webpack'),
   webpackStream = require('webpack-stream'),
   plumber = require('gulp-plumber'),
@@ -74,7 +73,6 @@ function js() {
     .pipe(webpackStream(webpackConfig), webpack)
     .pipe(minify({ noSource: true }))
     .pipe(dest(path.build.js))
-    .pipe(dest('./static/js'))
     .pipe(browsersync.stream())
 }
 
@@ -119,7 +117,6 @@ function css() {
 
     .pipe(dest(path.build.css))
 
-    .pipe(dest('./static/css'))
     .pipe(browsersync.stream())
 }
 
@@ -127,13 +124,6 @@ function fonts() {
   return src(path.src.fonts)
     .pipe(dest(path.build.fonts))
     .pipe(browsersync.stream())
-}
-
-function copyStatic() {
-  return mergeStream([
-    gulp.src('dist/css/*.min.css').pipe(gulp.dest('./static/css')),
-    gulp.src('dist/js/*-min.js').pipe(gulp.dest('./static/js'))
-  ]);
 }
 
 function svg() {
@@ -162,7 +152,6 @@ exports.fonts = fonts;
 exports.css = css;
 exports.html = html;
 exports.svg = svg;
-exports.copyStatic = copyStatic;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
